@@ -61,11 +61,33 @@ console.log(addToCollection(myCollection, album6.title, album6.artist, album6.ye
 
 
 function showCollection(collection) {
-  
-}
+  for (i = 0; i < collection.length; i++){
+console.log(collection[i].title  +  ' by '  +  collection[i].artist  +  ' in year '  +  collection[i].yearPublished);
 
+  
+  }
+}
 console.log("My Collection:");
 showCollection(myCollection);
+
+
+function findByArtist(collection, artist){
+  let matchingalbums = [];
+   for (i = 0; i < collection.length; ++i){
+      if (collection[i].artist === artist){
+        matchingalbums.push(collection[i])
+      } 
+        
+    } 
+    return matchingalbums;
+}
+console.log('MATCHING ALBUMS !');
+console.log('Domonic Fike Albums');
+console.log(findByArtist(myCollection, 'Domonic Fike'));
+console.log('Kanye Albums');
+ console.log(findByArtist(myCollection, 'Kanye'));
+console.log('21 Savage Albums');
+console.log(findByArtist(myCollection, '21 savage'));
 
 // PLEASE DO NOT MODIFY THIS. Just leave it down here at the bottom. Think of it
 // as a lil' chunk of friendly code that you don't need to understand right now.
